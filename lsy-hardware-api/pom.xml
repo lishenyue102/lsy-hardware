@@ -2,27 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.3</version>
-    </parent>
-    <groupId>com.lsy</groupId>
-    <artifactId>lsy-hardware</artifactId>
+
+    <groupId>com.lsy.hardware.api</groupId>
+    <artifactId>lsy-hardware-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lsy-hardware</name>
-    <description>First project for lsy</description>
+    <packaging>jar</packaging>
+
     <properties>
         <java.version>1.8</java.version>
     </properties>
+    <dependencies>
 
-    <modules>
-        <module>lsy-hardware-api</module>
-        <module>lsy-hardware-common</module>
-        <module>lsy-hardware-web</module>
-        <module>lsy-hardware-dao</module>
-        <module>lsy-hardware-service</module>
-    </modules>
+    </dependencies>
 
     <build>
         <plugins>
@@ -34,6 +25,18 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
