@@ -7,14 +7,13 @@
         <artifactId>lsy-hardware</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+
     <groupId>com.lsy.hardware.service</groupId>
     <artifactId>lsy-hardware-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>lsy-hardware-service</name>
-    <description>Demo project for Spring Boot</description>
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
+
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -26,15 +25,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.lsy.hardware.sql</groupId>
+            <artifactId>lsy-hardware-sql</artifactId>
+            <version>${lsy.hardware.sql.version}</version>
+        </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

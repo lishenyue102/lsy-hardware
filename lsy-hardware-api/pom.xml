@@ -16,6 +16,7 @@
     </dependencies>
 
     <build>
+        <finalName>lsy-hardware-api</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
