@@ -15,7 +15,7 @@ DROP TABLE IF EXISTS `lsy_hardware`.`user`;
 CREATE TABLE `user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL COMMENT '用户名',
-  `password` varchar(60) NOT NULL COMMENT '密码',,
+  `password` varchar(60) NOT NULL COMMENT '密码',
   `phone` varchar(32) NOT NULL COMMENT '手机号',
   `enable` tinyint(4) NOT NULL DEFAULT  '1' COMMENT '用户是否可用',
   `roles` varchar(60) NOT NULL COMMENT '角色[多个角色逗号隔开]',

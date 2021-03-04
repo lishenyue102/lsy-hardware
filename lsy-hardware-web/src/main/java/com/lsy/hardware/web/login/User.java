@@ -1,4 +1,4 @@
-package com.lsy.hardware.entity;
+package com.lsy.hardware.web.login;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

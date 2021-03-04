@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.lsy.hardware.dao.UserDAO">
+<mapper namespace="com.lsy.hardware.service.permission.dao.UserDAO">
 
-    <resultMap id="userResultMap" type="com.lsy.hardware.entity.User">
+    <resultMap id="userResultMap" type="com.lsy.hardware.service.api.permission.dto.UserDTO">
         <result property="id" column="id"/>
         <result property="username" column="username"/>
         <result property="password" column="password"/>
@@ -25,8 +25,8 @@
             ,phone
             ,enable
             ,roles
-            ,createTime
-            ,modifyTime
+            ,create_time
+            ,modify_time
         from user
         where username = #{username}
     </select>

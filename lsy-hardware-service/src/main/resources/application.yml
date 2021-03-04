@@ -1,11 +1,30 @@
+server:
+  port: 8081
+
 spring:
   datasource:
     platform: mysql
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/sys?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&allowMultiQueries=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lsy_hardware?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&allowMultiQueries=true
     username: root
     password: root
 
+    # 时间戳统一转换
+  #    jackson:
+  #      date-format: yyyy-MM-dd HH:mm:ss
+  #      time-zone: GMT+8
+
+  security:
+    user:
+      name: user
+      password: 123
+  main:
+    allow-bean-definition-overriding: true
+
+#database type
+#设置数据库类型（12种，可选值：oracle, mysql, mariadb, sqlite, hsqldb, postgresql, db2, sqlserver, informix, h2, sqlserver2012, derby）
+pagehelper:
+  helperDialect: mysql
 
 
 

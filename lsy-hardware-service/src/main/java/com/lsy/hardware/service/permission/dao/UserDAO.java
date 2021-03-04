@@ -1,6 +1,7 @@
-package com.lsy.hardware.dao;
+package com.lsy.hardware.service.permission.dao;
 
-import com.lsy.hardware.entity.User;
+
+import com.lsy.hardware.service.api.permission.dto.UserDTO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -16,5 +17,5 @@ public interface UserDAO {
      * @param username
      * @return
      */
-    User getByUsername(@Param("username")String username);
+    UserDTO getByUsername(@Param("username")String username);
 }

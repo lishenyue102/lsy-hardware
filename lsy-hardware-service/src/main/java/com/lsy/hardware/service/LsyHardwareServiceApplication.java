@@ -1,7 +1,9 @@
-package com.lsy.hardware.web;
+package com.lsy.hardware.service;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ImportResource;
 
 /**
@@ -9,11 +11,12 @@ import org.springframework.context.annotation.ImportResource;
  * @date 2021/03/03 15:43
  */
 @SpringBootApplication
+@MapperScan(value = {"com.lsy.hardware.**.dao"})
 @ImportResource(locations = {"classpath:config/spring.xml"})
-public class LsyHardwareWebApplication {
+public class LsyHardwareServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LsyHardwareWebApplication.class, args);
+        SpringApplication.run(LsyHardwareServiceApplication.class, args);
     }
 
 }
