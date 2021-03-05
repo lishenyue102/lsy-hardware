@@ -13,7 +13,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>lsy-hardware-service</name>
 
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -56,11 +55,10 @@
         </dependency>
 
         <dependency>
-            <groupId>com.alibaba.boot</groupId>
-            <artifactId>nacos-config-spring-boot-starter</artifactId>
-            <version>${nacos.config.spring.boot.starter.version}</version>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>${spring.cloud.starter.alibaba.nacos.config.version}</version>
         </dependency>
-
     </dependencies>
 
 
