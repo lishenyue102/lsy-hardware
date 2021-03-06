@@ -15,11 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/config")
 @RefreshScope // 配置自动刷新
-public class TestController {
+public class TestDataFlushController {
 
     @Value("${useLocalCache}")
     private boolean useLocalCache;
-
 
     @GetMapping("/test")
     public Boolean test() {

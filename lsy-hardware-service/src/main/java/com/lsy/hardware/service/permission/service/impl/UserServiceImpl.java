@@ -1,7 +1,7 @@
 package com.lsy.hardware.service.permission.service.impl;
 
-import com.lsy.hardware.service.api.permission.dto.UserDTO;
-import com.lsy.hardware.service.api.permission.service.UserService;
+import com.lsy.hardware.api.permission.dto.UserDTO;
+import com.lsy.hardware.api.permission.service.UserService;
 import com.lsy.hardware.service.permission.dao.UserDAO;
 import org.springframework.stereotype.Service;
 

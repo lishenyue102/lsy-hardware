@@ -1,0 +1,20 @@
+server:
+  port: 8082
+
+spring:
+    # 时间戳统一转换
+  #    jackson:
+  #      date-format: yyyy-MM-dd HH:mm:ss
+  #      time-zone: GMT+8
+  security:
+    user:
+      name: user
+      password: 123
+  main:
+    allow-bean-definition-overriding: true
+
+#  注册中心地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848

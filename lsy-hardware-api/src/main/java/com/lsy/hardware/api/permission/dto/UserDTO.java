@@ -1,4 +1,4 @@
-package com.lsy.hardware.service.api.permission.dto;
+package com.lsy.hardware.api.permission.dto;
 
 import lombok.Data;
 

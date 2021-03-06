@@ -27,6 +27,7 @@
         <logback.core.version>1.2.3</logback.core.version>
         <spring.cloud.starter.alibaba.nacos.config.version>2.2.2.RELEASE</spring.cloud.starter.alibaba.nacos.config.version>
         <spring.cloud.starter.alibaba.nacos.discovery.version>2.2.2.RELEASE</spring.cloud.starter.alibaba.nacos.discovery.version>
+        <spring.cloud.starter.openfeign.version>2.2.7.RELEASE</spring.cloud.starter.openfeign.version>
     </properties>
 
     <modules>

@@ -1,6 +1,6 @@
-package com.lsy.hardware.service.api.permission.service;
+package com.lsy.hardware.api.permission.service;
 
-import com.lsy.hardware.service.api.permission.dto.UserDTO;
+import com.lsy.hardware.api.permission.dto.UserDTO;
 
 /**
  * @author lishenyue Created on 2021/3/4 0004 15:22

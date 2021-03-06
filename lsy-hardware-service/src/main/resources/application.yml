@@ -27,9 +27,11 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
 
+
 #database type
 #设置数据库类型（12种，可选值：oracle, mysql, mariadb, sqlite, hsqldb, postgresql, db2, sqlserver, informix, h2, sqlserver2012, derby）
 pagehelper:
   helperDialect: mysql
 
+# 测试属性
 useLocalCache: false

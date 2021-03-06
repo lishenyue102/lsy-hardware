@@ -61,10 +61,17 @@
             <version>${spring.cloud.starter.alibaba.nacos.config.version}</version>
         </dependency>
 
+        <!--   Nacos服务注册     -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
             <version>${spring.cloud.starter.alibaba.nacos.discovery.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>${spring.cloud.starter.openfeign.version}</version>
         </dependency>
     </dependencies>
 

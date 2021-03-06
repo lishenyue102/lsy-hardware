@@ -4,7 +4,7 @@
 
 <mapper namespace="com.lsy.hardware.service.permission.dao.UserDAO">
 
-    <resultMap id="userResultMap" type="com.lsy.hardware.service.api.permission.dto.UserDTO">
+    <resultMap id="userResultMap" type="com.lsy.hardware.api.permission.dto.UserDTO">
         <result property="id" column="id"/>
         <result property="username" column="username"/>
         <result property="password" column="password"/>
