@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ImportResource;
 @SpringBootApplication(scanBasePackages = "com.lsy.hardware")
 //@ImportResource(locations = {"classpath:config/spring.xml"})
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages= {"com.lsy.hardware"})
+@EnableFeignClients(basePackages= {"com.lsy.hardware.api"})
 public class LsyHardwareWebApplication {
 
     public static void main(String[] args) {

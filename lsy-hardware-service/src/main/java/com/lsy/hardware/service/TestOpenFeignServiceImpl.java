@@ -17,6 +17,11 @@ public class TestOpenFeignServiceImpl implements TestOpenFeignService {
     @Override
     @GetMapping("/get")
     public String test() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "我是openFeign的第一个测试用例";
     }
 }
