@@ -1,4 +1,4 @@
-package com.lsy.hardware.web;
+package com.lsy.hardware.web.test;
 
 import com.lsy.hardware.api.TestOpenFeignService;
 import org.springframework.web.bind.annotation.GetMapping;

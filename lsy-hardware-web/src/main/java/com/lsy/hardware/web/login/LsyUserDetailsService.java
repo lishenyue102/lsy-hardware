@@ -2,6 +2,7 @@ package com.lsy.hardware.web.login;
 
 import com.lsy.hardware.api.permission.dto.UserDTO;
 import com.lsy.hardware.api.permission.service.UserService;
+import com.lsy.hardware.web.test.User;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,7 +17,7 @@ import javax.annotation.Resource;
  * @version 1.0
  */
 @Service
-public class MyUserDetailsService implements UserDetailsService {
+public class LsyUserDetailsService implements UserDetailsService {
 
     @Resource
     private UserService userService;

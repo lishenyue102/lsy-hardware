@@ -1,12 +1,11 @@
 package com.lsy.hardware.web.configuration;
 
-import com.lsy.hardware.web.login.MyUserDetailsService;
+import com.lsy.hardware.web.login.LsyUserDetailsService;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.annotation.Resource;
 
@@ -18,7 +17,7 @@ import javax.annotation.Resource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
-    private MyUserDetailsService myUserDetailsService;
+    private LsyUserDetailsService myUserDetailsService;
 
     @Override
     protected void configure(final HttpSecurity http) throws Exception {

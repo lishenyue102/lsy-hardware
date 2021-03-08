@@ -1,4 +1,4 @@
-package com.lsy.hardware.web.controller;
+package com.lsy.hardware.web.test.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 1.0
  */
 @RestController
-@RequestMapping("/admin/api")
-public class AdminController {
+@RequestMapping("/app/api")
+public class AppController {
 
     @GetMapping("/sayHi")
     public String sayHi() {
-        return "Hello,admin";
+        return "Hello,app";
     }
 }
