@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.session.security.SpringSessionBackedSessionRegistry;
 
 import javax.annotation.Resource;
 
@@ -17,7 +18,11 @@ import javax.annotation.Resource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
-    private LsyUserDetailsService myUserDetailsService;
+    private LsyUserDetailsService LsyUserDetailsService;
+
+    @Resource
+    private SpringSessionBackedSessionRegistry redisSessionRegistry;
+
 
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
@@ -28,12 +33,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated()
                 .and()
-                .formLogin();
+                .formLogin()
+                .and()
+                .sessionManagement()
+                .maximumSessions(1)
+                .sessionRegistry(redisSessionRegistry);
     }
 
     @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
         //注入userDetailsService的实现类
-        auth.userDetailsService(myUserDetailsService).passwordEncoder(new BCryptPasswordEncoder());
+        auth.userDetailsService(LsyUserDetailsService).passwordEncoder(new BCryptPasswordEncoder());
     }
 }
