@@ -14,9 +14,7 @@ spring:
       password: 123
 
   redis:
-#    host: 192.168.179.4
-    host: localhost
-    port: 6379
+    timeout: 6000
     password:
     lettuce:
       pool:
@@ -28,7 +26,19 @@ spring:
         min-idle: 4
           # 连接池最大阻塞等待时间（使用负值表示没有限制）
         max-wait: 6000
-#  注册中心地址
+    cluster:
+      nodes:
+        - 192.168.179.4:6379
+        - 192.168.179.4:6380
+        - 192.168.179.4:6381
+        - 192.168.179.4:6382
+        - 192.168.179.4:6383
+        - 192.168.179.4:6384
+        # 获取失败 最大重定向次数
+      max-redirects: 3
+
+
+  #  注册中心地址
   cloud:
     nacos:
       discovery:
