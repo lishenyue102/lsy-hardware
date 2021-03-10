@@ -25,8 +25,8 @@
         <lombok.version>1.18.16</lombok.version>
         <logback.classic.version>1.2.3</logback.classic.version>
         <logback.core.version>1.2.3</logback.core.version>
-        <spring.cloud.starter.alibaba.nacos.config.version>2.2.2.RELEASE</spring.cloud.starter.alibaba.nacos.config.version>
-        <spring.cloud.starter.alibaba.nacos.discovery.version>2.2.2.RELEASE</spring.cloud.starter.alibaba.nacos.discovery.version>
+        <spring.cloud.starter.alibaba.nacos.config.version>2.2.1.RELEASE</spring.cloud.starter.alibaba.nacos.config.version>
+        <spring.cloud.starter.alibaba.nacos.discovery.version>2.2.1.RELEASE</spring.cloud.starter.alibaba.nacos.discovery.version>
         <spring.cloud.starter.openfeign.version>2.2.2.RELEASE</spring.cloud.starter.openfeign.version>
     </properties>
 
