@@ -27,32 +27,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Resource
     private LsyUserDetailsService LsyUserDetailsService;
 
+    /**
+     * @Lazy避免 sessionRepository cannot be null问题
+     */
     @Resource
     @Lazy
     private SpringSessionBackedSessionRegistry redisSessionRegistry;
-
-
-    @Override
-    protected void configure(final HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/admin/api/**").hasRole("ADMIN")
-                .antMatchers("/user/api/**").hasRole("USER")
-                .antMatchers("app/api/**").permitAll()
-                .anyRequest()
-                .authenticated()
-                .and()
-                .formLogin()
-                .and()
-                .sessionManagement()
-                .maximumSessions(1)
-                .sessionRegistry(redisSessionRegistry);
-    }
-
-    @Override
-    protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
-        //注入userDetailsService的实现类
-        auth.userDetailsService(LsyUserDetailsService).passwordEncoder(new BCryptPasswordEncoder());
-    }
 
     /**
      * findByIndexNameAndIndexValue 根据用户名反查该用户在线session集合
@@ -69,5 +49,35 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public SpringSessionBackedSessionRegistry sessionRegistry(){
         return new SpringSessionBackedSessionRegistry(sessionRepository);
+    }
+
+    @Override
+    protected void configure(final HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .antMatchers("/admin/api/**").hasRole("ADMIN")
+                .antMatchers("/user/api/**").hasRole("USER")
+                .antMatchers("app/api/**").permitAll()
+                .anyRequest()
+                .authenticated()
+                .and()
+                .formLogin()
+                .and()
+                .logout()
+                .logoutUrl("/logout")
+//                .logoutSuccessHandler(myLogoutSuccessHandler)
+                .deleteCookies("JSESSIONID")
+                .permitAll()
+                .and()
+                .sessionManagement()
+                .invalidSessionUrl("/login")
+                .maximumSessions(1)
+                .expiredUrl("/login")
+                .sessionRegistry(redisSessionRegistry);
+    }
+
+    @Override
+    protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
+        //注入userDetailsService的实现类
+        auth.userDetailsService(LsyUserDetailsService).passwordEncoder(new BCryptPasswordEncoder());
     }
 }

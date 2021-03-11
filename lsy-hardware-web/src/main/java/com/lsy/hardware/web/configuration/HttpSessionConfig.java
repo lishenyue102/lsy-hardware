@@ -25,6 +25,7 @@ public class HttpSessionConfig {
 
     /**
      * httpSession的事件监听，改用session提供的会话注册表
+     * 解决session失效后 sessionRegistry中session没有同步失效的问题，启用并发session控制，首先需要在配置中增加下面监听器
      *
      * @return
      */
