@@ -1,15 +1,18 @@
 package com.lsy.hardware.web.configuration.permisson;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author lishenyue Created on 2021/3/2 21:50
@@ -30,14 +33,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Resource
     private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
 
+    @Resource
+    private JwtProperty jwtProperty;
+
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/admin/api/**").hasRole("ADMIN")
-                .antMatchers("/user/api/**").hasRole("USER")
-                .antMatchers("app/api/**").permitAll()
+        ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = http
+                .authorizeRequests();
 
-                .antMatchers(HttpMethod.OPTIONS).permitAll()
+        for (final String whiteUrl : jwtProperty.getWhiteUrlList()) {
+            registry.antMatchers(whiteUrl).permitAll();
+        }
+
+        //允许跨域请求的OPTIONS请求
+        registry.antMatchers(HttpMethod.OPTIONS).permitAll()
                 .anyRequest()
                 .authenticated()
                 // 关闭跨站请求防护及不使用session

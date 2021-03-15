@@ -1,10 +1,8 @@
 package com.lsy.hardware.service.permission.service.impl;
 
-import com.lsy.hardware.api.permission.dto.UserDTO;
-import com.lsy.hardware.api.permission.service.UserService;
+import com.lsy.hardware.api.login.dto.UserDTO;
+import com.lsy.hardware.api.login.service.LoginService;
 import com.lsy.hardware.service.permission.dao.UserDAO;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +15,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/user")
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements LoginService {
 
     @Resource
     private UserDAO userDAO;

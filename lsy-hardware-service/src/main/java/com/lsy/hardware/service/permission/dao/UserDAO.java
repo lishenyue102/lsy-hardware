@@ -1,7 +1,7 @@
 package com.lsy.hardware.service.permission.dao;
 
 
-import com.lsy.hardware.api.permission.dto.UserDTO;
+import com.lsy.hardware.api.login.dto.UserDTO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

@@ -1,8 +1,8 @@
 package com.lsy.hardware.web.configuration.permisson;
 
-import com.lsy.hardware.api.permission.dto.UserDTO;
-import com.lsy.hardware.api.permission.service.UserService;
-import com.lsy.hardware.web.test.User;
+import com.lsy.hardware.api.login.dto.UserDTO;
+import com.lsy.hardware.api.login.service.LoginService;
+import com.lsy.hardware.web.login.User;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,11 +20,11 @@ import javax.annotation.Resource;
 public class LsyUserDetailsService implements UserDetailsService {
 
     @Resource
-    private UserService userService;
+    private LoginService loginService;
 
     @Override
     public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
-        UserDTO userDTO = userService.getByUsername(username);
+        UserDTO userDTO = loginService.getByUsername(username);
         if (null == userDTO){
             throw new UsernameNotFoundException("用户不存在");
         }

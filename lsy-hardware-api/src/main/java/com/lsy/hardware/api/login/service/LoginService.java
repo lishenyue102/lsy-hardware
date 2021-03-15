@@ -1,6 +1,6 @@
-package com.lsy.hardware.api.permission.service;
+package com.lsy.hardware.api.login.service;
 
-import com.lsy.hardware.api.permission.dto.UserDTO;
+import com.lsy.hardware.api.login.dto.UserDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @FeignClient("lsy-hardware-service")
 @RequestMapping("/user")
-public interface UserService {
+public interface LoginService {
 
     /**
      * 测试接口
@@ -21,4 +21,7 @@ public interface UserService {
      */
     @PostMapping("/getByUsername")
     UserDTO getByUsername(@RequestParam("username") String username);
+
+
+
 }

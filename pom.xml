@@ -20,6 +20,7 @@
         <lsy.hardware.service.version>0.0.1-SNAPSHOT</lsy.hardware.service.version>
         <lsy.hardware.sql.version>0.0.1-SNAPSHOT</lsy.hardware.sql.version>
         <lsy.hardware.api.version>0.0.1-SNAPSHOT</lsy.hardware.api.version>
+        <lsy.hardware.common.version>0.0.1-SNAPSHOT</lsy.hardware.common.version>
         <mysql.connector.java.version>8.0.22</mysql.connector.java.version>
         <druid.version>1.2.3</druid.version>
         <lombok.version>1.18.16</lombok.version>
