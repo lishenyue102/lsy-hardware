@@ -28,6 +28,8 @@
         <spring.cloud.starter.alibaba.nacos.config.version>2.2.1.RELEASE</spring.cloud.starter.alibaba.nacos.config.version>
         <spring.cloud.starter.alibaba.nacos.discovery.version>2.2.1.RELEASE</spring.cloud.starter.alibaba.nacos.discovery.version>
         <spring.cloud.starter.openfeign.version>2.2.2.RELEASE</spring.cloud.starter.openfeign.version>
+        <jjwt.version>0.9.1</jjwt.version>
+        <hutool.version>5.4.0</hutool.version>
     </properties>
 
     <modules>

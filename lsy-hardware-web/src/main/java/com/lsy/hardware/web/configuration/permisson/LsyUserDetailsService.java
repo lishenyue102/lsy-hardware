@@ -1,4 +1,4 @@
-package com.lsy.hardware.web.login;
+package com.lsy.hardware.web.configuration.permisson;
 
 import com.lsy.hardware.api.permission.dto.UserDTO;
 import com.lsy.hardware.api.permission.service.UserService;
