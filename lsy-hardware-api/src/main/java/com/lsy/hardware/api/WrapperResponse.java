@@ -1,5 +1,7 @@
 package com.lsy.hardware.api;
 
+import javafx.scene.web.WebErrorEvent;
+
 import java.io.Serializable;
 
 /**
@@ -54,6 +56,10 @@ public class WrapperResponse<T> implements Serializable {
         this.data = data;
     }
 
+    public static <T> WrapperResponse<T> success() {
+        return success(null);
+    }
+
     public static <T> WrapperResponse<T> success(T data) {
         return new WrapperResponse(SUCCESS, MSG_SUCCESS, data);
     }
@@ -69,6 +75,15 @@ public class WrapperResponse<T> implements Serializable {
     public static <T> WrapperResponse<T> fail(Integer code, String message) {
         return new WrapperResponse(code, message,null);
     }
+
+    public static <T> WrapperResponse<T> fail(String message) {
+        return new WrapperResponse(FAIL, message,null);
+    }
+
+    public Boolean isSuccess(){
+        return SUCCESS.equals(this.code);
+    }
+
 
     public Integer getCode() {
         return code;

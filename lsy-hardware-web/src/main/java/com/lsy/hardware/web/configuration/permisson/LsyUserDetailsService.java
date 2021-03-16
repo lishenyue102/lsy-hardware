@@ -1,8 +1,9 @@
 package com.lsy.hardware.web.configuration.permisson;
 
 import com.lsy.hardware.api.login.dto.UserDTO;
-import com.lsy.hardware.api.login.service.LoginService;
-import com.lsy.hardware.web.login.User;
+import com.lsy.hardware.api.login.service.UserService;
+import com.lsy.hardware.service.common.exception.HardwareException;
+import com.lsy.hardware.web.login.LUserDetailsImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,19 +21,19 @@ import javax.annotation.Resource;
 public class LsyUserDetailsService implements UserDetailsService {
 
     @Resource
-    private LoginService loginService;
+    private UserService userService;
 
     @Override
     public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
-        UserDTO userDTO = loginService.getByUsername(username);
+        UserDTO userDTO = userService.getByUsername(username);
         if (null == userDTO){
-            throw new UsernameNotFoundException("用户不存在");
+            throw new HardwareException("用户名或密码错误");
         }
-        User user = new User();
-        BeanUtils.copyProperties(userDTO,user);
+        LUserDetailsImpl lUserDetailsImpl = new LUserDetailsImpl();
+        BeanUtils.copyProperties(userDTO,lUserDetailsImpl);
         // AuthorityUtils.commaSeparatedStringToAuthorityList是Spring Security提供的用于将逗号分隔的权限字符串分隔为集合
-        user.setAuthorities(AuthorityUtils.commaSeparatedStringToAuthorityList(user.getRoles()));
+        lUserDetailsImpl.setAuthorities(AuthorityUtils.commaSeparatedStringToAuthorityList(lUserDetailsImpl.getRoles()));
 
-        return user;
+        return lUserDetailsImpl;
     }
 }

@@ -10,7 +10,9 @@ sql模块：如果把dao层放进去，就需要注解，那么需要添加sprin
 @EnableDiscoveryClient Nacos注册中心用  
 @EnableFeignClients OpenFeign用,仅仅**服务调用方**用即可
 @FeignClient("服务名") 这个名称给负载均衡用
-@EnableRedisHttpSession 启用基于Redis的HttpSession实现
+@EnableRedisHttpSession 启用基于Redis的HttpSession实现  
+
+Spring-security应当在入口处依赖
 
 
 

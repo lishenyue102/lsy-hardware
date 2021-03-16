@@ -10,7 +10,7 @@ import java.util.List;
  * @author lishenyue Created on 2021/3/3 20:03
  * @version 1.0
  */
-public class User implements UserDetails {
+public class LUserDetailsImpl implements UserDetails {
 
     private Integer id;
     private String username;
