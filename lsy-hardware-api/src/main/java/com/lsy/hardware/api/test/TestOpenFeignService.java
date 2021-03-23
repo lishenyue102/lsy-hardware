@@ -1,4 +1,4 @@
-package com.lsy.hardware.api;
+package com.lsy.hardware.api.test;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

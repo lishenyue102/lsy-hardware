@@ -1,4 +1,4 @@
-package com.lsy.hardware.web.configuration.cache;
+package com.lsy.hardware.service.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

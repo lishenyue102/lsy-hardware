@@ -1,7 +1,5 @@
 package com.lsy.hardware.api;
 
-import javafx.scene.web.WebErrorEvent;
-
 import java.io.Serializable;
 
 /**

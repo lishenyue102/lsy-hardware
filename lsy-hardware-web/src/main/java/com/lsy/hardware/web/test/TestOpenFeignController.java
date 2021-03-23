@@ -1,6 +1,6 @@
 package com.lsy.hardware.web.test;
 
-import com.lsy.hardware.api.TestOpenFeignService;
+import com.lsy.hardware.api.test.TestOpenFeignService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
