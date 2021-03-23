@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.5.RELEASE</version>
+        <version>2.3.8.RELEASE</version>
     </parent>
 
     <groupId>com.lsy</groupId>
@@ -26,9 +26,9 @@
         <lombok.version>1.18.16</lombok.version>
         <logback.classic.version>1.2.3</logback.classic.version>
         <logback.core.version>1.2.3</logback.core.version>
-        <spring.cloud.starter.alibaba.nacos.config.version>2.2.1.RELEASE</spring.cloud.starter.alibaba.nacos.config.version>
-        <spring.cloud.starter.alibaba.nacos.discovery.version>2.2.1.RELEASE</spring.cloud.starter.alibaba.nacos.discovery.version>
-        <spring.cloud.starter.openfeign.version>2.2.2.RELEASE</spring.cloud.starter.openfeign.version>
+        <spring.cloud.starter.alibaba.nacos.config.version>2.2.5.RELEASE</spring.cloud.starter.alibaba.nacos.config.version>
+        <spring.cloud.starter.alibaba.nacos.discovery.version>2.2.5.RELEASE</spring.cloud.starter.alibaba.nacos.discovery.version>
+        <spring.cloud.starter.openfeign.version>2.2.7.RELEASE</spring.cloud.starter.openfeign.version>
         <jjwt.version>0.9.1</jjwt.version>
         <hutool.version>5.4.0</hutool.version>
     </properties>
