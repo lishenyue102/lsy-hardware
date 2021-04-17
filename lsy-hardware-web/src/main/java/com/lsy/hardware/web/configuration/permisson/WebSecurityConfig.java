@@ -1,6 +1,5 @@
 package com.lsy.hardware.web.configuration.permisson;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -14,7 +13,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * @author lishenyue Created on 2021/3/2 21:50
@@ -24,7 +22,7 @@ import java.util.List;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
-    private LsyUserDetailsService LsyUserDetailsService;
+    private LsyUserDetailsService lsyUserDetailsService;
 
     @Resource
     private RestfulAccessDeniedHandler restfulAccessDeniedHandler;
@@ -76,7 +74,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
         //注入userDetailsService的实现类
-        auth.userDetailsService(LsyUserDetailsService).passwordEncoder(passwordEncoder());
+        auth.userDetailsService(lsyUserDetailsService).passwordEncoder(passwordEncoder());
     }
 
     @Bean
