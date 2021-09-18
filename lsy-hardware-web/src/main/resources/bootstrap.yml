@@ -4,6 +4,6 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: localhost:8848
+        server-addr: 39.107.27.139:8848
         file-extension: yaml
 
